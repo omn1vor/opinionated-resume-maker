@@ -1,0 +1,77 @@
+name: Daniel Pimenov
+position: Java Developer
+
+# These are mandatory, with the sole exception of github (which is recommended nevertheless)
+email: daniil.pimenov@gmail.com
+phone: +7 (987) 825-28-85
+linkedIn: https://www.linkedin.com/in/daniel-pimenov-948045aa/
+github: https://github.com/omn1vor
+
+languages:
+  - Russian (native)
+  - English (C1, advanced)
+
+skills:
+  - Java Core
+  - Spring Boot
+  - Hibernate
+  - SQL
+  - REST, SOAP
+  - JavaScript
+  - OOP, DRY, KISS, SOLID, design patterns
+
+# If your experience is not (exactly) relevant - make it ultra-short (like in the example).
+# If you have a lot of relevant experience - you can write whatever you want in any part of the resume.
+# In any case, do not delve deeper than 10 years into your experience.
+# The first entry should be the most recent, be it working experience or education or whatnot.
+experience:
+  -
+    company: Elevel
+    position: Senior 1C:Enterprise developer
+    start: 2015
+    end:
+    skills:
+      - 1C:Enterprise
+      - MS-SQL
+      - SOAP
+      - REST
+      - Qlik Sense
+      - XML
+      - HTML
+    # If your experience was relevant, you may just fill skills and omit comment. But if you have something you really
+    # want to show off - don't hesitate and write it down.
+    comment: 1C:Enterprise is a Russian framework for creating business applications with its own VB-like language. 
+      In addition to the development I also participated in meetings with clients and supervised work of other 
+      programmers.
+  -
+    company: Pec
+    position: 1C:Enterprise developer
+    start: 2011
+    end: 2015
+    skills:
+      - 1C:Enterprise
+      - MS-SQL
+    comment:
+
+education:
+  -
+    year: 2003
+    institution: Saratov Socio-Economic University
+    major: Management
+
+courses:
+  -
+    year: 2022
+    company: JetBrains Academy
+    course: Java Core, Java Developer, Java Backend Developer
+  -
+    year: 2021
+    company: freeCodeCamp.org
+    course: Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries,
+      Data Visualization, Back End Development and APIs, Quality Assurance, Scientific Computing with Python,
+      Data Analysis with Python, Information Security
+
+# Keep this really short and do not write here all this "I'm a very organized person and can work efficiently under
+# stress" shit. You may even skip it, if you like.
+summary: I'm an experienced 1C:Enterprise developer in transition to Java, and I hope to convert this experience to new
+  environment. I'm passionate about coding and music.
