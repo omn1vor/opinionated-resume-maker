@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Opinionated Resume Maker</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
@@ -9,9 +9,62 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="container-fluid bg-light">
-    <h1 class="text-dark text-center" th:text="${resume.name}">Full Name</h1>
-    <h1 class="text-dark text-center" th:text="${resume.role}">Desired role</h1>
+<div id="resume-html" class="container-fluid bg-light">
+    <h1 id="name" th:text="${resume.name}">John Doe</h1>
+    <h1 id="role" th:text="${resume.role}">Java Developer</h1>
+    <div id="contacts">
+        <label for="email">Mail:</label><span id="email" th:text="${resume.email}">mailbox@mailservice.com</span>
+        <label for="phone">Phone:</label><span id="phone" th:text="${resume.phone}">+7(495)123-45-67</span>
+        <label for="linkedIn">LinkedIn:</label><a id="linkedIn" href="#" target="_blank" th:href="@{${resume.linkedIn}}"
+                                                  th:text="${resume.linkedIn}">linkedIn</a>
+        <label for="github">GitHub:</label><a id="github" href="#" target="_blank" th:href="@{${resume.github}}"
+                                              th:text="${resume.github}">GitHub</a>
+    </div>
+    <div id="languages">
+        <h2>Languages:</h2>
+        <ul th:each="language : ${resume.languages}">
+            <li th:text="${language}">English, C1</li>
+        </ul>
+    </div>
+    <div id="skills">
+        <h2>Skills:</h2>
+        <ul th:each="skill : ${resume.skills}">
+            <li th:text="${skill}">Java</li>
+        </ul>
+    </div>
+    <div id="experience">
+        <h2>Working experience:</h2>
+        <ul th:each="we : ${resume.experience}">
+            <li>
+                <h4 th:text="|${we.position}, ${we.company}|">Junior Java developer, CompanyThatHiresJuniors</h4>
+                <h4 th:text="|${we.start} - ${we.end == null ? 'now' : we.end}|">2021 - 2022</h4>
+            </li>
+        </ul>
+    </div>
+    <div id="education">
+        <h2>Education:</h2>
+        <ul th:each="ed : ${resume.education}">
+            <li>
+                <h4 th:text="|${ed.institution}, ${ed.major}|">University of City, Computer Science</h4>
+                <h5 th:text="${ed.year}">2020</h5>
+            </li>
+        </ul>
+    </div>
+    <div id="courses">
+        <h2>Courses:</h2>
+        <ul th:each="course : ${resume.courses}">
+            <li>
+                <h4 th:text="|${course.company}, ${course.name}|">University of City, Computer Science</h4>
+                <h5 th:text="${course.year}">2020</h5>
+            </li>
+        </ul>
+    </div>
+    <div id="summary">
+        <h2>Summary:</h2>
+        <p th:text="${resume.summary}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
 </div>
 </body>
 </html>

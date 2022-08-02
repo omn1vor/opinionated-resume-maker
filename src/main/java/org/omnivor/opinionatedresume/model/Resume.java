@@ -17,5 +17,8 @@ public class Resume {
     private String github;
     private List<String> languages;
     private List<String> skills;
-
+    private List<WorkingExperience> experience;
+    private List<Education> education;
+    private List<Course> courses;
+    private String summary;
 }

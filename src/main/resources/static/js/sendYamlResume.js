@@ -13,7 +13,7 @@ function getPDF() {
 }
 
 async function getHTML() {
-    let response = await fetch('/yaml-to-json', {
+    let response = await fetch('/yaml-to-html', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -26,8 +26,12 @@ async function getHTML() {
         return;
     }
 
-    let resume = await response.json();
-    fillResumeFields(resume);
+    const resumeHtml = await response.text();
+    const doc = new DOMParser().parseFromString(resumeHtml, 'text/html');
+    const resume = doc.getElementById('resume-html');
+    const resumeContainer = document.getElementById('resume');
+    resumeContainer.textContent = '';
+    resumeContainer.appendChild(resume);
     showEditor(false);
 }
 
@@ -35,28 +39,8 @@ function edit() {
     showEditor(true);
 }
 
-function fillResumeFields(resume) {
-
-    let element;
-
-    document.getElementById('name').value = resume.name;
-    document.getElementById('role').value = resume.role;
-
-    // contacts
-    document.getElementById('email').textContent = resume.email;
-    document.getElementById('phone').textContent = resume.phone;
-    setLink('linkedIn', resume.linkedIn);
-    setLink('github', resume.github);
-
-    // languages
-    createList(document.querySelector('#languages > ul'), resume.languages);
-
-    // skills
-    createList(document.querySelector('#skills > ul'), resume.languages);
-}
-
 function showEditor(turnOn) {
-    document.getElementById('resume-html').classList.toggle('hidden');
+    document.getElementById('resume').classList.toggle('hidden');
     document.getElementById('editor-container').classList.toggle('hidden');
     document.getElementById('html-button').classList.toggle('hidden');
     document.getElementById('edit-button').classList.toggle('hidden');
