@@ -3,3 +3,7 @@
     width: 100%;
     height: 100%;
 }
+
+.border-secondary {
+    --bs-border-opacity: .5;
+}

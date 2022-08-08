@@ -2,6 +2,7 @@ name: Daniel Pimenov
 position: Java Developer
 
 # These are mandatory, with the sole exception of GitHub (which is recommended nevertheless)
+address: Pugachev, Russia
 email: daniil.pimenov@gmail.com
 phone: +7 (987) 825-28-85
 linkedIn: https://www.linkedin.com/in/daniel-pimenov-948045aa/
@@ -26,7 +27,7 @@ skills:
 # The first entry should be the most recent, be it working experience or education or whatnot.
 experience:
   - company: Elevel
-    position: Senior 1C:Enterprise developer
+    position: Senior developer (1C:Enterprise)
     start: 2015 # You can write dates however you like ('aug 2015', '01.08.2015', etc), it's just a string
     end:
     skills:
@@ -44,7 +45,7 @@ experience:
       In addition to the development I also participated in meetings with clients and supervised work of other
       programmers.
   - company: Pec
-    position: 1C:Enterprise developer
+    position: Developer (1C:Enterprise)
     start: 2011
     end: 2015
     skills:
@@ -67,6 +68,18 @@ courses:
       Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries,
       Data Visualization, Back End Development and APIs, Quality Assurance, Scientific Computing with Python,
       Data Analysis with Python, Information Security
+
+projects:
+  - name: Opinionated Resume Maker
+    description: >-
+      Web app for making a resume, mostly for (junior) developers. It was inspired by a series of resume analysis videos
+      from Sergey Nemchinskiy YouTube channel.
+    skills:
+      - Java Core
+      - Spring Boot
+      - Thymeleaf
+      - JavaScript
+      - Bootstrap
 
 # Keep this really short and do not write here all this "I'm a very organized person and can work efficiently under
 # stress" shit. You may even skip it, if you like.

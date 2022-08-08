@@ -4,8 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Opinionated Resume Maker</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-              integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/b4c8499bbf.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
@@ -22,7 +22,7 @@
                 <div class="col-md-1">
                     <button class="btn btn-secondary" type="button" onclick="getPDF()">Get PDF</button>
                     <button id="html-button" class="btn btn-secondary" type="button" onclick="getHTML()">Show HTML</button>
-                    <button id="edit-button" class="btn btn-secondary hidden" type="button" onclick="edit()">Edit</button>
+                    <button id="edit-button" class="btn btn-secondary d-none" type="button" onclick="edit()">Edit</button>
                 </div>
             </div>
             <div id="editor-container" class="container-fluid">
@@ -31,7 +31,7 @@
                     position: Java Developer
                 </div>
             </div>
-            <div id="resume" class="container-fluid hidden">
+            <div id="resume" class="container-fluid d-none">
             </div>
         </div>
         <script src="/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>

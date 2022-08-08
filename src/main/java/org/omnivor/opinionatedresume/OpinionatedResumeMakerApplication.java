@@ -1,7 +1,7 @@
 package org.omnivor.opinionatedresume;
 
 import org.omnivor.opinionatedresume.model.Resume;
-import org.omnivor.opinionatedresume.model.YamlResumeRequest;
+import org.omnivor.opinionatedresume.dto.YamlResumeRequest;
 import org.omnivor.opinionatedresume.service.ResumeService;
 import org.omnivor.opinionatedresume.utilities.ResourceReader;
 import org.springframework.beans.factory.annotation.Autowired;

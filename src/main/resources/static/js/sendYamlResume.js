@@ -40,10 +40,10 @@ function edit() {
 }
 
 function showEditor(turnOn) {
-    document.getElementById('resume').classList.toggle('hidden');
-    document.getElementById('editor-container').classList.toggle('hidden');
-    document.getElementById('html-button').classList.toggle('hidden');
-    document.getElementById('edit-button').classList.toggle('hidden');
+    document.getElementById('resume').classList.toggle('d-none');
+    document.getElementById('editor-container').classList.toggle('d-none');
+    document.getElementById('html-button').classList.toggle('d-none');
+    document.getElementById('edit-button').classList.toggle('d-none');
 }
 
 function createList(parent, list) {

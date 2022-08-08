@@ -11,6 +11,7 @@ import java.util.List;
 public class Resume {
     private String name;
     private String role;
+    private String address;
     private String email;
     private String phone;
     private String linkedIn;
@@ -18,6 +19,7 @@ public class Resume {
     private List<String> languages;
     private List<String> skills;
     private List<WorkingExperience> experience;
+    private List<Project> projects;
     private List<Education> education;
     private List<Course> courses;
     private String summary;

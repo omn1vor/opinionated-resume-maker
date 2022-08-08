@@ -1,4 +1,4 @@
-package org.omnivor.opinionatedresume.model;
+package org.omnivor.opinionatedresume.dto;
 
 import lombok.Getter;
 
