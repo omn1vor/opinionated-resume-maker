@@ -10,7 +10,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Resume {
     private String name;
-    private String role;
+    private String position;
     private String address;
     private String email;
     private String phone;

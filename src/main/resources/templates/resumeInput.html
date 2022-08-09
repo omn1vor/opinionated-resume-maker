@@ -9,20 +9,22 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-        <div class="container-fluid bg-light">
-            <h1 class="text-dark text-center">Opinionated Resume Maker</h1>
-            <div class="row">
-                <div class="col-md-11">
-                    <p class="lead text-secondary">
-                        Hey, this is a simple junior developer resume maker service with an idea of how such a resume
-                        should be done. Please fill your data in the sample resume, preserving the structure, then
-                        press "Get PDF" button.
-                    </p>
-                </div>
-                <div class="col-md-1">
-                    <button class="btn btn-secondary" type="button" onclick="getPDF()">Get PDF</button>
-                    <button id="html-button" class="btn btn-secondary" type="button" onclick="getHTML()">Show HTML</button>
-                    <button id="edit-button" class="btn btn-secondary d-none" type="button" onclick="edit()">Edit</button>
+        <div class="container-fluid p-0">
+            <div class="bg-light border-bottom p-3 mb-3">
+                <h1 class="text-dark text-center bg-light">Opinionated Resume Maker</h1>
+                <div class="row">
+                    <div class="col-md-10">
+                        <p class="lead">
+                            Hey, this is a simple junior developer resume maker service with an idea of how such a resume
+                            should be done. Please fill your data in the sample resume, preserving the structure, then
+                            press "Get PDF" button.
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary m-1" type="button" onclick="getPDF()">Get PDF</button>
+                        <button id="html-button" class="btn btn-secondary m-1" type="button" onclick="showHTML()">Show HTML</button>
+                        <button id="edit-button" class="btn btn-secondary m-1 d-none" type="button" onclick="edit()">Show Editor</button>
+                    </div>
                 </div>
             </div>
             <div id="editor-container" class="container-fluid">

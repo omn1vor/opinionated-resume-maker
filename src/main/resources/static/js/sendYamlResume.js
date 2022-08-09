@@ -1,3 +1,4 @@
+
 function getYaml() {
     yaml = {
         yaml: editor.getValue()
@@ -5,11 +6,26 @@ function getYaml() {
     return JSON.stringify(yaml);
 }
 
-function getPDF() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", '/pdf', false);
-    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    xhr.send(getYaml());
+async function getPDF() {
+    const resumeHtml = await getHTML();
+    if (!resumeHtml) {
+        return;
+    }
+
+    let printWindow = window.open('', '', 'height=600,width=800');
+    printWindow.document.write(resumeHtml);
+    printWindow.document.close();
+    printWindow.onload = e => {
+        printWindow.document.title = getFileName(printWindow.document);
+        printWindow.print();
+        printWindow.close();
+    }
+}
+
+function getFileName(doc) {
+    const name = doc.getElementById('name').innerHTML;
+    const position = doc.getElementById('position').innerHTML;
+    return `Resume - ${name} - ${position}`;
 }
 
 async function getHTML() {
@@ -23,10 +39,19 @@ async function getHTML() {
 
     if (!response.ok) {
         console.log(await response.json());
-        return;
+        return '';
     }
 
     const resumeHtml = await response.text();
+    return resumeHtml;
+}
+
+async function showHTML() {
+    const resumeHtml = await getHTML();
+    if (!resumeHtml) {
+        return;
+    }
+
     const doc = new DOMParser().parseFromString(resumeHtml, 'text/html');
     const resume = doc.getElementById('resume-html');
     const resumeContainer = document.getElementById('resume');
