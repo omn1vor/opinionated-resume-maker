@@ -15,10 +15,13 @@ async function getPDF() {
     let printWindow = window.open('', '', 'height=600,width=800');
     printWindow.document.write(resumeHtml);
     printWindow.document.close();
+
     printWindow.onload = e => {
         printWindow.document.title = getFileName(printWindow.document);
-        printWindow.print();
-        printWindow.close();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 1000);
     }
 }
 
