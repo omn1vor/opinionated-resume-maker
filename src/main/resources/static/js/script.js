@@ -115,4 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lang = document.documentElement.lang;
     }
     element.value = lang;
+
+    if (lang !== document.documentElement.lang) {
+        setLanguage();
+    }
 });
