@@ -71,8 +71,7 @@ courses:
     company: freeCodeCamp.org
     name: >-
       Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries,
-      Data Visualization, Back End Development and APIs, Quality Assurance, Scientific Computing with Python,
-      Data Analysis with Python, Information Security
+      Data Visualization, Back End Development and APIs, Quality Assurance, Information Security
 
 projects:
   - name: Opinionated Resume Maker
@@ -101,5 +100,5 @@ projects:
 # stress" shit. You may even skip it, if you like.
 summary: >-
   Switching to Java at the moment. I have studied Java for the last 7 months and think that, given my 
-  experience in software development in general, I'll be a team asset pretty soon if given a chance. I'm passionate 
-  about coding and music.
+  experience in software development in general, I'll be a team asset pretty soon if given a chance. 
+  I'm passionate about coding and music.
