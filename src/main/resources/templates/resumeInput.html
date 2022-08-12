@@ -1,57 +1,57 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:lang="${#locale.language}">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Opinionated Resume Maker</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/b4c8499bbf.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <div class="container-fluid p-0">
-            <div class="bg-light border-bottom p-3 mb-3">
-                <div>
-                    <h1 class="text-dark text-center bg-light mb-3">Opinionated Resume Maker</h1>
-                    <div class="text-end pe-1 mt-2 me-3 small position-absolute top-0 end-0">
-                        <span th:text="#{lang.title}" class="text-muted">Language</span>
-                        <select id="locales" class="rounded text-muted">
-                            <option value="en" th:text="#{lang.eng}"></option>
-                            <option value="ru" th:text="#{lang.rus}"></option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                        <p class="lead" th:text="#{greeting}">
-                            Greeting text
-                        </p>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="text-end">
-                            <button class="btn btn-secondary m-1" type="button" onclick="getPDF()" th:text="#{btn.getPDF}">Get PDF</button>
-                            <button id="html-button" class="btn btn-secondary m-1" type="button" onclick="showHTML()" th:text="#{btn.showHTML}">Show HTML</button>
-                            <button id="edit-button" class="btn btn-secondary m-1 d-none" type="button" onclick="edit()" th:text="#{btn.showEditor}">Show Editor</button>
-                        </div>
-                    </div>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Opinionated Resume Maker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b4c8499bbf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div id="header" class="bg-light border-bottom p-3 mb-3">
+            <div>
+                <h1 class="text-dark text-center bg-light mb-3">Opinionated Resume Maker</h1>
+                <div class="text-end pe-1 mt-2 me-3 small position-absolute top-0 end-0">
+                    <span th:text="#{lang.title}" class="text-muted">Language</span>
+                    <select id="locales" class="rounded text-muted">
+                        <option value="en" th:text="#{lang.eng}"></option>
+                        <option value="ru" th:text="#{lang.rus}"></option>
+                    </select>
                 </div>
             </div>
-            <div id="editor-container" class="container-fluid">
-                <div id="editor" th:text="${resumeText}">
-                    name: John Doe
-                    position: Java Developer
+            <div class="row">
+                <div class="col-md-10">
+                    <p class="lead" th:text="#{greeting}">
+                        Greeting text
+                    </p>
                 </div>
-            </div>
-            <div id="resume" class="container-fluid d-none">
+                <div class="col-md-2">
+                    <div class="text-end">
+                        <button class="btn btn-secondary m-1" type="button" onclick="getPDF()" th:text="#{btn.getPDF}">Get PDF</button>
+                        <button id="html-button" class="btn btn-secondary m-1" type="button" onclick="showHTML()" th:text="#{btn.showHTML}">Show HTML</button>
+                        <button id="edit-button" class="btn btn-secondary m-1 d-none" type="button" onclick="edit()" th:text="#{btn.showEditor}">Show Editor</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <script src="/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-        <script>
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/eclipse");
-            editor.session.setMode("ace/mode/yaml");
-            editor.session.setUseWrapMode(true);
-        </script>
-        <script src="/js/script.js" type="text/javascript" charset="utf-8"></script>
-    </body>
+        <div id="editor-container" class="container-fluid">
+            <div id="editor" th:text="${resumeText}">
+                name: John Doe
+                position: Java Developer
+            </div>
+        </div>
+        <div id="resume" class="container-fluid d-none">
+        </div>
+    </div>
+    <script src="/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/eclipse");
+        editor.session.setMode("ace/mode/yaml");
+        editor.session.setUseWrapMode(true);
+    </script>
+    <script src="/js/script.js" type="text/javascript" charset="utf-8"></script>
+</body>
 </html>
