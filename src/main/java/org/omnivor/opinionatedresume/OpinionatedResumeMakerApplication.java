@@ -3,16 +3,20 @@ package org.omnivor.opinionatedresume;
 import org.omnivor.opinionatedresume.model.Resume;
 import org.omnivor.opinionatedresume.dto.YamlResumeRequest;
 import org.omnivor.opinionatedresume.service.ResumeService;
-import org.omnivor.opinionatedresume.utilities.ResourceReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import javax.validation.Valid;
+import java.util.Locale;
 
 @SpringBootApplication
 public class OpinionatedResumeMakerApplication {
@@ -21,9 +25,18 @@ public class OpinionatedResumeMakerApplication {
 		SpringApplication.run(OpinionatedResumeMakerApplication.class, args);
 	}
 
-	@Bean("defaultResume")
-	public String getDefaultResume() {
-		return ResourceReader.readFileAsString("classpath:default_en.yaml");
+	@Bean
+	public LocaleResolver localeResolver() {
+		SessionLocaleResolver slr = new SessionLocaleResolver();
+		slr.setDefaultLocale(Locale.US);
+		return slr;
+	}
+
+	@Bean
+	public LocaleChangeInterceptor localeChangeInterceptor() {
+		LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
+		lci.setParamName("lang");
+		return lci;
 	}
 }
 
@@ -33,11 +46,9 @@ class WebController {
 	@Autowired
 	private ResumeService resumeService;
 
-	@Autowired
-	private String defaultResume;
-
 	@GetMapping("/")
 	public String getMainPage(Model model) {
+		String defaultResume = resumeService.getDefaultResume(LocaleContextHolder.getLocale().getLanguage());
 		model.addAttribute("resumeText", defaultResume);
 		return "resumeInput";
 	}

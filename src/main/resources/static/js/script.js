@@ -87,3 +87,29 @@ function setLink(id, url) {
     element.textContent = element.host + element.pathname;
 }
 
+function setLanguage(event) {
+    let selected = document.getElementById('locales').value;
+    if (!selected) {
+        return;
+    }
+
+    window.location.replace('?lang=' + selected);
+    try {
+        localStorage.setItem('lang', selected);
+    } catch (ignored) {}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    let element = document.getElementById('locales');
+    element.onchange = setLanguage;
+
+    let lang;
+    try {
+        lang = localStorage.getItem('lang');
+    } catch (ignored) {}
+
+    if (!lang) {
+        lang = document.documentElement.lang;
+    }
+    element.value = lang;
+});

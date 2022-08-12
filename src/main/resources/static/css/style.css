@@ -4,6 +4,11 @@
     height: 100%;
 }
 
+img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
 .border-secondary {
     --bs-border-opacity: .5;
 }

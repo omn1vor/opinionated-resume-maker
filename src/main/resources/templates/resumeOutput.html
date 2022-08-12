@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +10,16 @@
 </head>
 <body>
 <div id="resume-html" class="container-fluid">
-    <h1 id="name" class="text-primary text-center" th:text="${resume.name}">John Doe</h1>
-    <h1 id="position" class="text-primary text-center" th:text="${resume.position}">Java Developer</h1>
+    <header class="row align-items-center justify-content-center pt-3">
+        <div id="photo" class="col-sm-3 text-center" th:unless="${resume.photoUrl == null or resume.photoUrl.empty}">
+            <img class="img-fluid img-thumbnail rounded-circle" th:src="@{${resume.photoUrl}}" src="" alt="photo">
+        </div>
+        <div class="col-sm-6">
+            <h1 id="name" class="text-primary text-center" th:text="${resume.name}">John Doe</h1>
+            <h1 id="position" class="text-primary text-center" th:text="${resume.position}">Java Developer</h1>
+        </div>
+        <div class="col-sm-3"></div>
+    </header>
 
     <div id="contacts" class="mt-3 mb-5">
         <ul class="nav justify-content-center">
@@ -29,11 +37,11 @@
             </li>
             <li class="nav-item mx-3">
                 <i class="fa-brands fa-linkedin me-2"></i>
-                <a id="linkedIn" class="" target="_blank" th:href="@{${resume.linkedIn}}"th:text="${resume.linkedIn}">linkedIn</a>
+                <a id="linkedIn" class="" target="_blank" th:href="@{${resume.linkedIn}}" th:text="${resume.getLinkedInTitle()}">linkedIn</a>
             </li>
             <li class="nav-item mx-3" th:unless="${resume.github == null or resume.github.empty}">
                 <i class="fa-brands fa-github me-2"></i>
-                <a id="github" class="" target="_blank" th:href="@{${resume.github}}" th:text="${resume.github}">GitHub</a>
+                <a id="github" class="" target="_blank" th:href="@{${resume.github}}" th:text="${resume.getGithubTitle()}">GitHub</a>
             </li>
         </ul>
     </div>
@@ -41,16 +49,16 @@
     <div class="row">
 
         <!- left column -->
-        <div class="col-sm-3 border-end  border-2 bg-light">
+        <div class="col-sm-3 border-end  border-2 bg-light pt-3">
             <div id="languages" class="mb-5 ms-2">
-                <h4>Languages:</h4>
+                <h4 th:text="#{resume.languages}">Languages:</h4>
                 <ul th:each="language : ${resume.languages}">
                     <li th:text="${language}">English, C1</li>
                 </ul>
             </div>
 
             <div id="skills" class="mb-5 ms-2">
-                <h4>Skills:</h4>
+                <h4 th:text="#{resume.skills}">Skills:</h4>
                 <ul th:each="skill : ${resume.skills}">
                     <li th:text="${skill}">Java</li>
                 </ul>
@@ -58,16 +66,20 @@
         </div>
 
         <!- right column -->
-        <div class="col-sm-9">
+        <div class="col-sm-9 pt-3">
             <div id="experience" class="mb-5 ms-2" th:unless="${resume.experience == null or resume.experience.empty}">
-                <h4 class="border-bottom">Working experience:</h4>
+                <h4 class="border-bottom" th:text="#{resume.experience}">Working experience:</h4>
                 <ul th:each="we : ${resume.experience}">
                     <li>
                         <h5>
                             <span th:text="${we.position}">Junior Java developer</span> |
                             <span class="text-muted" th:text="${we.company}">CompanyThatHiresJuniors</span>
                         </h5>
-                        <p th:text="|${we.start} - ${we.end == null ? 'now' : we.end}|">2021 - 2022</p>
+                        <p>
+                            <span th:text="${we.start}">2021</span> -
+                            <span th:text="${we.end}" th:unless="${we.end == null}">2022</span>
+                            <span th:text="#{resume.now}" th:if="${we.end == null}">now</span>
+                        </p>
                         <p class="text-muted" th:text="${#strings.listJoin(we.skills, ', ')}">Java Core, Spring Boot</p>
                         <small class="footnote" th:text="${we.comment}">This here is a comment on the job, if one is really needed</small>
                     </li>
@@ -75,10 +87,14 @@
             </div>
 
             <div id="projects" class="mb-5 ms-2" th:unless="${resume.projects == null or resume.projects.empty}">
-                <h4 class="border-bottom">Projects:</h4>
+                <h4 class="border-bottom" th:text="#{resume.projects}">Projects:</h4>
                 <ul th:each="project : ${resume.projects}">
                     <li>
-                        <h5 th:text="${project.name}">Opinionated Resume Maker</h5>
+                        <div>
+                            <h5 class="d-inline" th:text="${project.name}">Opinionated Resume Maker</h5>
+                            <a th:unless="${project.url == null}" th:href="@{${project.url}}" target="_blank"><i class="fa-solid fa-link fa-xs mx-1"></i>source</a>
+                            <a th:unless="${project.liveUrl == null}" th:href="@{${project.liveUrl}}" target="_blank"><i class="fa-solid fa-link fa-xs mx-1"></i>live</a>
+                        </div>
                         <p th:text="${project.description}">Web app for making a resume, mostly for (junior) developers.</p>
                         <p class="text-muted" th:text="${#strings.listJoin(project.skills, ', ')}">Java Core, Spring Boot</p>
                     </li>
@@ -86,7 +102,7 @@
             </div>
 
             <div id="education" class="mb-5 ms-2" th:unless="${resume.education == null or resume.education.empty}">
-                <h4 class="border-bottom">Education:</h4>
+                <h4 class="border-bottom" th:text="#{resume.education}">Education:</h4>
                 <ul th:each="ed : ${resume.education}">
                     <li>
                         <h5>
@@ -99,7 +115,7 @@
             </div>
 
             <div id="courses" class="mb-5 ms-2" th:unless="${resume.courses == null or resume.courses.empty}">
-                <h4 class="border-bottom">Courses:</h4>
+                <h4 class="border-bottom" th:text="#{resume.courses}">Courses:</h4>
                 <ul th:each="course : ${resume.courses}">
                     <li>
                         <h5>
@@ -112,7 +128,7 @@
             </div>
         </div>
         <div id="summary" class="mb-5 ms-2" th:unless="${resume.summary == null or resume.summary.empty}">
-            <h4 class="border-bottom">Summary:</h4>
+            <h4 class="border-bottom" th:text="#{resume.summary}">Summary:</h4>
             <p th:text="${resume.summary}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 laboris nisi ut aliquip ex ea commodo consequat.</p>

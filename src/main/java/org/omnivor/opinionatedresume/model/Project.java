@@ -12,5 +12,7 @@ import java.util.List;
 public class Project {
     private String name;
     private String description;
+    private String url;
+    private String liveUrl;
     private List<String> skills;
 }

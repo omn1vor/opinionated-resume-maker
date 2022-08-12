@@ -1,8 +1,8 @@
-name: Daniel Pimenov
-position: Java Developer
+name: Даниил Пименов
+position: Разработчик Java
 
-# These are mandatory, with the sole exception of GitHub (which is recommended nevertheless)
-address: Pugachev, Russia
+# Все контакты нужно заполнить. Если очень не хочется GitHub - его можно не указывать.
+address: Пугачев, Россия
 email: daniil.pimenov@gmail.com
 phone: +7 (987) 825-28-85
 linkedIn: https://www.linkedin.com/in/daniel-pimenov-948045aa/
@@ -10,8 +10,8 @@ github: https://github.com/omn1vor
 photoUrl: http://localhost:8080/2022_home_1.jpg
 
 languages:
-  - Russian (native)
-  - English (C1, advanced)
+  - Русский (родной)
+  - Английский (C1, продвинутый)
 
 skills:
   - Java Core
@@ -24,44 +24,42 @@ skills:
   - REST, SOAP
   - JavaScript
   - Docker
-  - OOP, DRY, KISS, SOLID, design patterns
+  - ООП, DRY, KISS, SOLID, design patterns
 
-# If your experience is not (exactly) relevant - make it ultra-short (like in the example).
-# If you have a lot of relevant experience - you can write whatever you want in any part of the resume.
-# In any case, do not delve deeper than 10 years into your experience.
-# The first entry should be the most recent, be it working experience or education or whatnot.
+# Если ваш опыт работы не имеет отношения к той должности, на которую вы претендуете, опишите его совсем коротко.
+# Если у вас большой опыт и он релевантен - можете писать что угодно и где угодно в своём резюме.
+# В любом случае, ограничьтесь последними 10 годами опыта.
+# Начинать всегда нужно с самого свежего по времени пункта, будь это опыт работы, образование или что-то другое.
 experience:
-  - company: Elevel
-    position: Senior developer (1C:Enterprise)
-    start: 2015 # You can write dates however you like ('aug 2015', '01.08.2015', etc), it's just a string
+  - company: Эlevel
+    position: Старший разработчик (1С:Предприятие)
+    start: 2015 # Даты можно записывать как угодно ('авг 2015', '01.08.2015', и т.п.), это просто строка
     end:
     skills:
-      - 1C:Enterprise
+      - 1С:Предприятие
       - MS-SQL
       - SOAP
       - REST
       - Qlik Sense
       - XML
       - HTML
-    # If your experience was relevant, you may just fill skills and omit comment. But if you have something you really
-    # want to show off - don't hesitate and write it down.
+    # Если у вас релевантный опыт работы - то можете просто перечислить навыки, не описывая саму работу. Но если
+    # хочется похвастаться (и есть чем) - напишите, не стесняйтесь.
     comment: >-
-      1C:Enterprise is a Russian framework for creating business applications with its own VB-like language.
-      In addition to the development I also participated in meetings with clients and supervised work of other
-      programmers.
-  - company: Pec
-    position: Developer (1C:Enterprise)
+      Кроме собственно разработки я участвовал в переговорах с заказчиками и управлял командой разработчиков.
+  - company: ПЭК
+    position: Разработчик (1С:Предприятие)
     start: 2011
     end: 2015
     skills:
-      - 1C:Enterprise
+      - 1С:Предприятие
       - MS-SQL
     comment:
 
 education:
   - year: 2003
-    institution: Saratov Socio-Economic University
-    major: Management
+    institution: Саратовский Социально-Экономический Университет
+    major: Менеджмент предприятия
 
 courses:
   - year: 2022

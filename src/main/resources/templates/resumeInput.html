@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:lang="${#locale.language}">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,19 +11,28 @@
     <body>
         <div class="container-fluid p-0">
             <div class="bg-light border-bottom p-3 mb-3">
-                <h1 class="text-dark text-center bg-light">Opinionated Resume Maker</h1>
+                <div>
+                    <h1 class="text-dark text-center bg-light mb-3">Opinionated Resume Maker</h1>
+                    <div class="text-end pe-1 mt-2 me-3 small position-absolute top-0 end-0">
+                        <span th:text="#{lang.title}" class="text-muted">Language</span>
+                        <select id="locales" class="rounded text-muted">
+                            <option value="en" th:text="#{lang.eng}"></option>
+                            <option value="ru" th:text="#{lang.rus}"></option>
+                        </select>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-10">
-                        <p class="lead">
-                            Hey, this is a simple junior developer resume maker service with an idea of how such a resume
-                            should be done. Please fill your data in the sample resume, preserving the structure, then
-                            press "Get PDF" button.
+                        <p class="lead" th:text="#{greeting}">
+                            Greeting text
                         </p>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary m-1" type="button" onclick="getPDF()">Get PDF</button>
-                        <button id="html-button" class="btn btn-secondary m-1" type="button" onclick="showHTML()">Show HTML</button>
-                        <button id="edit-button" class="btn btn-secondary m-1 d-none" type="button" onclick="edit()">Show Editor</button>
+                        <div class="text-end">
+                            <button class="btn btn-secondary m-1" type="button" onclick="getPDF()" th:text="#{btn.getPDF}">Get PDF</button>
+                            <button id="html-button" class="btn btn-secondary m-1" type="button" onclick="showHTML()" th:text="#{btn.showHTML}">Show HTML</button>
+                            <button id="edit-button" class="btn btn-secondary m-1 d-none" type="button" onclick="edit()" th:text="#{btn.showEditor}">Show Editor</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,6 +52,6 @@
             editor.session.setMode("ace/mode/yaml");
             editor.session.setUseWrapMode(true);
         </script>
-        <script src="/js/sendYamlResume.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/js/script.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
