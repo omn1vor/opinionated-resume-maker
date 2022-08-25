@@ -7,7 +7,7 @@ email: daniil.pimenov@gmail.com
 phone: +7 (987) 825-28-85
 linkedIn: https://www.linkedin.com/in/daniel-pimenov-948045aa/
 github: https://github.com/omn1vor
-photoUrl: http://localhost:8080/2022_home_1.jpg
+photoUrl: http://localhost:8080/2022_home_2.jpg
 
 languages:
   - Russian (native)
@@ -43,10 +43,11 @@ experience:
       - Qlik Sense
       - XML
       - HTML
-    # If your experience was relevant, you may just fill skills and omit comment. But if you have something you really
-    # want to show off - don't hesitate and write it down.
+    # For the comment section: domain, main projects and (optional) your duties. If this experience wasn't relevant -
+    # keep it very short. But if you have something you really want to show off - don't hesitate and write it down.
     comment: >-
-      1C:Enterprise is a Russian framework for creating business applications with its own VB-like language.
+      Developed the whole spectre of business accounting systems for an electric appliances wholesale supplier.
+      1C:Enterprise is a Russian framework for creating business applications with its own VB-like language. 
       In addition to the development I also participated in meetings with clients and supervised work of other
       programmers.
   - company: Pec
@@ -56,7 +57,9 @@ experience:
     skills:
       - 1C:Enterprise
       - MS-SQL
-    comment:
+    comment: >-
+      Developed data exchange systems for the largest transportation company in the country. Created 
+      UI for self-service terminals.
 
 education:
   - year: 2003

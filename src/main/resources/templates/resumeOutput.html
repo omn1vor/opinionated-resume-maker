@@ -81,7 +81,7 @@
                             <span th:text="#{resume.now}" th:if="${we.end == null}">now</span>
                         </p>
                         <p class="text-muted" th:text="${#strings.listJoin(we.skills, ', ')}">Java Core, Spring Boot</p>
-                        <small class="footnote" th:text="${we.comment}">This here is a comment on the job, if one is really needed</small>
+                        <p class="" th:text="${we.comment}">This here is a comment on the job, if one is really needed</p>
                     </li>
                 </ul>
             </div>
