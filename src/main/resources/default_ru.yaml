@@ -85,6 +85,15 @@ projects:
       - Thymeleaf
       - JavaScript
       - Bootstrap
+  - name: Account Service
+    description: >-
+      Веб-сервис для размещения сведений о зарплатах сотрудников. Включает разграничение прав, администрирование и 
+      аудит событий.
+    url: https://github.com/omn1vor/account-service
+    skills:
+      - Spring Boot
+      - Spring Security
+      - Hibernate
   - name: Swagger Counters
     description: >-
       Техническое демо приложения-личного кабинета сервиса учета статистики со 100%-автосгенерированным кодом для 
