@@ -63,6 +63,13 @@
                     <li th:text="${skill}">Java</li>
                 </ul>
             </div>
+
+            <div id="summary" class="mb-5 ms-2" th:unless="${resume.summary == null or resume.summary.empty}">
+                <h4 th:text="#{resume.summary}">Summary:</h4>
+                <p th:text="${resume.summary}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
         </div>
 
         <!- right column -->
@@ -127,12 +134,7 @@
                 </ul>
             </div>
         </div>
-        <div id="summary" class="mb-5 ms-2" th:unless="${resume.summary == null or resume.summary.empty}">
-            <h4 class="border-bottom" th:text="#{resume.summary}">Summary:</h4>
-            <p th:text="${resume.summary}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+
     </div>
 </div>
 </body>

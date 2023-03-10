@@ -9,6 +9,10 @@ img {
     max-width: 200px;
 }
 
+ul > li > p {
+    margin-bottom: 0.5rem;
+}
+
 .border-secondary {
     --bs-border-opacity: .5;
 }
