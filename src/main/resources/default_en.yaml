@@ -2,12 +2,12 @@ name: Daniel Pimenov
 position: Java Developer
 
 # These are mandatory, with the sole exception of GitHub (which is recommended nevertheless)
-address: Pugachev, Russia
+address: Novi Sad, Serbia
 email: daniil.pimenov@gmail.com
-phone: +7 (987) 825-28-85
+phone: +38165 443-74-26
 linkedIn: https://www.linkedin.com/in/daniel-pimenov-948045aa/
 github: https://github.com/omn1vor
-photoUrl: http://localhost:8080/2022_home_2.jpg
+photoUrl: http://localhost:8080/photo.jpg
 
 languages:
   - Russian (native)
@@ -15,15 +15,16 @@ languages:
 
 skills:
   - Java Core
-  - Spring Boot
-  - Hibernate
+  - Spring
   - SQL
+  - Kafka
+  - Docker
+  - Hibernate
+  - Swagger/OpenAPI
   - Liquibase
   - Thymeleaf
-  - Swagger/OpenAPI
-  - REST, SOAP
   - JavaScript
-  - Docker
+  - REST, SOAP
   - OOP, DRY, KISS, SOLID, design patterns
 
 # If your experience is not (exactly) relevant - make it ultra-short (like in the example).
@@ -31,10 +32,22 @@ skills:
 # In any case, do not delve deeper than 10 years into your experience.
 # The first entry should be the most recent, be it working experience or education or whatnot.
 experience:
+  - company: Luxoft Serbia
+    position: Java developer
+    start: 2022
+    end:
+    skills:
+      - Java
+      - Spring
+      - Kafka
+      - Docker
+      - MySQL
+    comment: >-
+      Developed web analytics Spring service in a team.
   - company: Elevel
     position: Senior developer (1C:Enterprise)
     start: 2015 # You can write dates however you like ('aug 2015', '01.08.2015', etc), it's just a string
-    end:
+    end: 2022
     skills:
       - 1C:Enterprise
       - MS-SQL
@@ -46,10 +59,9 @@ experience:
     # For the comment section: domain, main projects and (optional) your duties. If this experience wasn't relevant -
     # keep it very short. But if you have something you really want to show off - don't hesitate and write it down.
     comment: >-
-      Developed the whole spectre of business accounting systems for an electric appliances wholesale supplier.
-      1C:Enterprise is a Russian framework for creating business applications with its own VB-like language. 
-      In addition to the development I also participated in meetings with clients and supervised work of other
-      programmers.
+      Developed business applications (sales, CRM, finance, accounting) for electric appliances wholesale supplier using
+      1C:Enterprise framework. Collaborated with business executives to translate their needs into actionable software 
+      development tasks while providing feedback on feasibility and potential trade-offs. Supervised work of other developers.
   - company: Pec
     position: Developer (1C:Enterprise)
     start: 2011
@@ -58,15 +70,16 @@ experience:
       - 1C:Enterprise
       - MS-SQL
     comment: >-
-      Developed data exchange systems for the largest transportation company in the country. Created 
-      UI for self-service terminals.
-
+      Developed data exchange systems for the largest transportation company in the country. Created UI for self-service terminals.
 education:
   - year: 2003
     institution: Saratov Socio-Economic University
     major: Management
 
 courses:
+  - year: 2023
+    company: Luxoft
+    name: Java Upskilling Program. Internal training program, consisting of Spring, Docker and Kafka courses.
   - year: 2022
     company: JetBrains Academy
     name: Java Core, Java Developer, Java Backend Developer
@@ -75,8 +88,18 @@ courses:
     name: >-
       Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries,
       Data Visualization, Back End Development and APIs, Quality Assurance, Information Security
-
 projects:
+  - name: URL shortener
+    description: >-
+      Web service for URL shortening. Spring Boot application with JSON API, MySQL for persistence and Kafka for keeping 
+      clicks data. Fully containerized.
+    url: https://github.com/omn1vor/url-shortener
+    skills:
+      - Spring Boot
+      - Swagger
+      - Docker compose
+      - MySQL
+      - Kafka
   - name: Opinionated Resume Maker
     description: >-
       Web app for making a resume, mostly for (junior) developers. It was inspired by a series of resume analysis videos
@@ -111,6 +134,6 @@ projects:
 # Keep this really short and do not write here all this "I'm a very organized person and can work efficiently under
 # stress" shit. You may even skip it, if you like.
 summary: >-
-  Switching to Java at the moment. I have studied Java for the last 7 months and think that, given my 
-  experience in software development in general, I'll be a team asset pretty soon if given a chance. 
+  Switched to Java from 1C:Enterprise. Using Java and Spring since january 2022. 
+  Given my experience in software development in general, I'll be a team asset very soon if given a chance. 
   I'm passionate about coding and music.
