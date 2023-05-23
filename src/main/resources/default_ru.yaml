@@ -1,0 +1,144 @@
+name: Даниил Пименов
+position: Разработчик Java
+
+# Все контакты нужно заполнить. Если очень не хочется GitHub - его можно не указывать.
+address: Пугачев, Россия
+email: daniil.pimenov@gmail.com
+phone: +7 (987) 825-28-85
+linkedIn: https://www.linkedin.com/in/daniel-pimenov-948045aa/
+github: https://github.com/omn1vor
+photoUrl: http://localhost:8080/photo.jpg
+
+languages:
+  - Русский (родной)
+  - Английский (C1, продвинутый)
+
+skills:
+  - Java Core
+  - Spring
+  - SQL
+  - Kafka
+  - Docker
+  - Hibernate
+  - Swagger/OpenAPI
+  - Liquibase
+  - Thymeleaf
+  - JavaScript
+  - REST, SOAP
+  - OOP, DRY, KISS, SOLID, design patterns
+
+# Если ваш опыт работы не имеет отношения к той должности, на которую вы претендуете, опишите его совсем коротко.
+# Если у вас большой опыт и он релевантен - можете писать что угодно и где угодно в своём резюме.
+# В любом случае, ограничьтесь последними 10 годами опыта.
+# Начинать всегда нужно с самого свежего по времени пункта, будь это опыт работы, образование или что-то другое.
+experience:
+  - company: Luxoft Serbia
+    position: Java developer
+    start: 2022
+    end: 2023
+    skills:
+      - Java
+      - Spring
+      - Kafka
+      - Docker
+      - MySQL
+    comment: >-
+      Разработка сервиса веб-аналитики на базе Spring Boot + MySQL + Kafka в составе команды.
+  - company: Эlevel
+    position: Старший разработчик (1С:Предприятие)
+    start: 2015 # Даты можно записывать как угодно ('авг 2015', '01.08.2015', и т.п.), это просто строка
+    end:
+    skills:
+      - 1С:Предприятие
+      - MS SQL Server
+      - SOAP
+      - REST
+      - Spring Boot
+      - Qlik Sense
+      - XML
+      - HTML
+    # Если у вас релевантный опыт работы - укажите отрасли и основные проекты. Если нет - то всё то же, но сильно
+    # короче. Но если хочется похвастаться (и есть чем) - напишите, не стесняйтесь.
+    comment: >-
+      Автоматизация учета федеральной оптовой сети электротоваров (продажи, закупки, маркетинг, фин., бух., кадровый 
+      учет). Транслировал пожелания бизнеса в задачи для разработки, оценивал тех. возможность, риски и подводные камни.
+      Создавал REST-сервисы для внутреннего использования. Управлял командой разработчиков.
+  - company: ПЭК
+    position: Разработчик (1С:Предприятие)
+    start: 2011
+    end: 2015
+    skills:
+      - 1С:Предприятие
+      - MS-SQL
+    comment: >- 
+      Создание системы обмена данными между филиалами в крупнейшем перевозчике страны; создание интерфейсов для 
+      терминалов самообслуживания, автоматизация опер. и бух. учета.
+education:
+  - year: 2003
+    institution: Саратовский Социально-Экономический Университет
+    major: Менеджмент предприятия
+
+courses:
+  - year: 2023
+    company: Luxoft
+    name: Java Upskilling Program. Внутренняя программа повышения квалификации по Spring, Docker и Kafka.
+  - year: 2022
+    company: JetBrains Academy
+    name: Java Core, Java Developer, Java Backend Developer
+  - year: 2021
+    company: freeCodeCamp.org
+    name: >-
+      Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries,
+      Data Visualization, Back End Development and APIs, Quality Assurance, Information Security
+
+projects:
+  - name: URL shortener
+    description: >-
+      Веб-сервис коротких ссылок. Приложение на Spring Boot с JSON API, MySQL для хранения данных и Kafka для хранения
+      кликов. Полностью контейнеризированно, двуязычно.
+    url: https://github.com/omn1vor/url-shortener
+    skills:
+      - Spring Boot
+      - Swagger
+      - Docker compose
+      - MySQL
+      - Kafka
+  - name: Opinionated Resume Maker
+    description: >-
+      Веб-приложение для создания резюме (начинающего) разработчика. Умолчания, образцы и компоновка вдохновлены серией
+      видео с Youtube-канала Сергея Немчинского, где  разбираются резюме начинающих специалистов. Резюме, которое вы
+      читаете, создано в этом сервисе.
+    url: https://github.com/omn1vor/opinionated-resume-maker
+    skills:
+      - Spring Boot
+      - Thymeleaf
+      - JavaScript
+      - Bootstrap
+  - name: Account Service
+    description: >-
+      Веб-сервис для размещения сведений о зарплатах сотрудников. Включает разграничение прав, администрирование и 
+      аудит событий.
+    url: https://github.com/omn1vor/account-service
+    skills:
+      - Spring Boot
+      - Spring Security
+      - Hibernate
+  - name: Swagger Counters
+    description: >-
+      Техническое демо приложения-личного кабинета сервиса учета статистики со 100%-автосгенерированным кодом для 
+      моделей и REST-контроллеров.
+    url: https://github.com/omn1vor/epic-partners-test-task
+    skills:
+      - Spring boot
+      - Hibernate
+      - Liquibase
+      - Swagger/OpenAPI
+      - Bootstrap
+      - JavaScript
+
+# Здесь можно очень кратко написать что-то о себе, только без ерунды типа "Я организованный и исполнительный человек,
+# без проблем работаю в условиях стресса" и т.п. Можно вообще пропустить этот раздел.
+summary: >-
+  Переквалифицировался в Java-разработчика из 1С:Предприятия. Использую Java и Spring с начала 2022. Уверен, что стану 
+  полезным приобретением для команды, потому что знаю весь процесс разработки ПО, от запроса бизнеса до внедрения, 
+  и не боюсь новых технологий.
